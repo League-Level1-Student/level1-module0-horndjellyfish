@@ -8,20 +8,21 @@ void checkCatch(int x) {
 }
 void setup() {
   size (500, 500);
+  
 }
-int raindropy = 25;
+int raindropX = (int) random(500);
+int raindropY = 25;
 void draw() {
-  int randomNumber = (int) random(width);
   background(169, 225, 255);
   fill (51, 153, 255);
   stroke(0, 0, 0);
-  ellipse(randomNumber, raindropy, 15, 38);
-  raindropy = raindropy + 10;
-  for (int i = 0; i < 1; i ++) {
+  ellipse(raindropX, raindropY, 15, 38);
+  raindropY = raindropY + 8;
+  if(raindropY > 500) {
     fill(51, 153, 255);
     stroke(0, 0, 0);
-    ellipse(randomNumber, raindropy, 15, 38);
-    raindropy = raindropy + 10;
+    ellipse(raindropX = (int) random(500), raindropY, 15, 38);
+    raindropY = 0;
   }
   fill(173, 176, 181);
   rect(mouseX, 450, 70, 200);
