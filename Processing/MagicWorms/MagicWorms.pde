@@ -3,20 +3,23 @@ void setup() {
   background(85, 153, 255);
 }            
 void draw() {
-  float x = random(500);
-  float y = random(500);
-  //fill(255, 0, 0);
-  //ellipse(x, y, 55, 55);
-  //fill(255, 137, 0);
-  //ellipse(x, y, 55, 55);
-  //fill(255, 255, 0);
-  //ellipse(x, y, 55, 55);
-  //fill(0, 204, 0);
-  //ellipse(x, y, 55, 55);
+  float inX = random(500);
+  float x = getWormX(inX);
+  float inY = random(500);
+  float y = getWormX(inY);
+  fill(255, 0, 0);
+  ellipse(x, y, 55, 55);
+  fill(255, 137, 0);
+  ellipse(x, y, 55, 55);
+  fill(255, 255, 0);
+  ellipse(x, y, 55, 55);
+  fill(0, 204, 0);
+  ellipse(x, y, 55, 55);
   fill(0, 0, 230);
   ellipse(x, y, 55, 55);
-  //fill(127, 0, 255);
-  //ellipse(x, y, 55, 55);
+  fill(127, 0, 255);
+  ellipse(x, y, 55, 55);
+  makeMagical();
 }
 float frequency = .001;
 float noiseInterval = PI;
@@ -27,10 +30,10 @@ void makeMagical() {
      noStroke();
 }
 
-float getWormX(int i) {
+float getWormX(float i) {
      return map(noise(i*noiseInterval + frameCount * frequency), 0, 1, 0, width);
 }
 
-float getWormY(int i) {
+float getWormY(float i) {
      return map(noise(i*noiseInterval+1 + frameCount * frequency), 0, 1, 0, height);
 }

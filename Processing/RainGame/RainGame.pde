@@ -1,7 +1,8 @@
 int score;
 int x;
+int bucketX = 70;
 void checkCatch(int x) {
-if (x > mouseX && x < mouseX+100)
+if (x > mouseX && x < mouseX+bucketX)
     score++;
   else if (score > 0) 
     score--;
@@ -19,17 +20,25 @@ void draw() {
   stroke(0, 0, 0);
   ellipse(raindropX, raindropY, 15, 38);
   raindropY = raindropY + 8;
-  if(raindropY > 500) {
+  if (raindropY >= 450 && raindropX > mouseX && raindropX < mouseX + bucketX) {
+    score++;
     fill(51, 153, 255);
     stroke(0, 0, 0);
-    ellipse(raindropX = (int) random(500), raindropY, 15, 38);
     raindropY = 0;
+    ellipse(raindropX = (int) random(500), raindropY, 15, 38);
+    
+    
   }
-    if (raindropY >= 450) {
+  else if(raindropY > 500) {
+    fill(51, 153, 255);
+    stroke(0, 0, 0);
+    raindropY = 0;
+    ellipse(raindropX = (int) random(500), raindropY, 15, 38);
     checkCatch(x);
   }
+  
   fill(173, 176, 181);
-  rect(mouseX, 450, 70, 200);
+  rect(mouseX, 450, bucketX, 200);
   fill(0, 0, 0);
   textSize(16);
   text("Score: " + score, 20, 20);
