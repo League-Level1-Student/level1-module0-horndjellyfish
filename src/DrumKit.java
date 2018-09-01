@@ -21,8 +21,8 @@ import javax.swing.SwingUtilities;
 
 public class DrumKit extends MouseAdapter {
 
-    JLabel drumLabelWithImage;
-    JLabel drumLabelWithImage1;
+    JLabel snareDrumImage;
+    JLabel bassDrumImage;
 
     public static void main(String[] args) throws Exception {
    	 new DrumKit().getGoing();
@@ -35,7 +35,7 @@ public class DrumKit extends MouseAdapter {
    	 	frame.setVisible(true);
    	 // 3. Set the size of the frame
    	 	frame.setSize(500, 500);
-   	 // 4. Set the title of the frame
+   	 // 4. Set the title of the frame 
    	 	frame.setTitle("Title");
    	 // 5. Make a JPanel and initialize it.
    	 	JPanel panel = new JPanel();
@@ -47,18 +47,20 @@ public class DrumKit extends MouseAdapter {
    	 	String bassdrum = "bassdrum.jpg";
    	 // 9. Edit the next line to use your String variable
 // drumLabelWithImage = createLabelImage(drumImageString);
-   	 	drumLabelWithImage = createLabelImage(snaredrum);
-   	 	drumLabelWithImage1 = createLabelImage(bassdrum);
+   	 	snareDrumImage = createLabelImage(snaredrum);
+   	 	snareDrumImage.setLocation(250, 250);
+   	 	bassDrumImage = createLabelImage(bassdrum);
+   	 	bassDrumImage.setLocation(250, 400);
    	 // 10. Add the image to the panel
-   	 	panel.add(drumLabelWithImage);
-   	 	panel.add(drumLabelWithImage1);
+   	 	panel.add(snareDrumImage);
+   	 	panel.add(bassDrumImage);
    	 // 11. Set the layout of the panel to "new GridLayout()"
    	 	panel.setLayout(new GridLayout());
    	 // 12. call the pack() method on the frame
    	 	frame.pack();
    	 // 13. add a mouse listener to drumLabelWithImage.
-   	 	drumLabelWithImage.addMouseListener(this);
-   	 	drumLabelWithImage1.addMouseListener(this);
+   	 	snareDrumImage.addMouseListener(this);
+   	 	bassDrumImage.addMouseListener(this);
     }
 
     public void mouseClicked(MouseEvent e) {
@@ -70,7 +72,7 @@ public class DrumKit extends MouseAdapter {
    	   if (SwingUtilities.isLeftMouseButton(e)) {
    		   playSound("snaredrum.wav");
    	   }
-   	   if (SwingUtilities.isLeftMouseButton(e)) {
+   	   if (SwingUtilities.isRightMouseButton(e)) {
    		   playSound("bassdrum.wav");
    	   }
      // 17. ...use the playSound method to play a drum sound.
