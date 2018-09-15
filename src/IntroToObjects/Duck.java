@@ -1,3 +1,4 @@
+package IntroToObjects;
 
 public class Duck {
 	int numberOfFriends = 7;
@@ -8,5 +9,11 @@ public class Duck {
 	}
 	public static void main(String[] args) {
 		
+	}
+	void quack() {
+		System.out.println("quack.");
+	}
+	void waddle() {
+		System.out.println("*waddle*");
 	}
 }
