@@ -20,13 +20,13 @@ public class CoolCat {
 
 	void steal() {
 		mice--;
-		if (mice < 2)
-			System.out.println("Nice try, but I still have" + mice + " mouse left.");
-		if (mice > 0)
+		if (mice == 1)
+			System.out.println("Nice try, but I still have " + mice + " mouse left.");
+		if (mice > 1)
 			System.out.println("Nice try, but I still have " + mice + " mice left.");
 		else if (mice < 0)
 			System.out.println("That's overkill!");
-		else
+		else if (mice == 0)
 			System.out.println("No mice left :(");
 	}
 
@@ -34,12 +34,14 @@ public class CoolCat {
 		/* Do the following things without changing the Cat class */
 
 		// 1. Make the Cat meow
-			CoolCat Delilah = new CoolCat("Delilah");
-			Delilah.meow();
+		CoolCat delilah = new CoolCat("Delilah");
+		delilah.meow();
 		// 2. Get the Cat to print its name
-			Delilah.printName();
+		delilah.printName();
 		// 3. Steal all the Cat's mice!
-			Delilah.steal();
+		for (int i = 0; i < 9; i++) {
+			delilah.steal();
+		}
 
 	}
 }

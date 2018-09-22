@@ -1,9 +1,10 @@
 /BodyPartQuiz.class
+/CoolCat.class
 /CutenessTV.class
 /DrumKit.class
-/Duck.class
 /DuelingButtons.class
 /Houses.class
+/IntroToObjects/
 /JackInTheBox.class
 /MyFirstSwingGUI.class
 /PhotoQuiz.class
@@ -15,6 +16,8 @@
 /cymbal.jpg
 /cymbal.wav
 /drum.wav
+/drumKit.jpg
+/drumSolo.wav
 /homer-woohoo.wav
 /jack.jpeg
 /jackInTheBox.png
@@ -26,14 +29,7 @@
 /snare drum.jpg
 /snare.jpg
 /snaredrum.wav
-/drumset.jpg
-/drumKit.jpg
-/Keep Yourself Alive-[AudioTrimmer.com].mp3
-/drumSolo.mp3
-/Keep Yourself Alive-[AudioTrimmer.com] (1).wav
-/drumSolo.wav
-/IntroToObjects.class
-/IntroToObjects/
-/IntroToObjectsc/
-/Cat.class
-/CoolCat.class
+/HarryPotter.class
+/Smurfs.class
+/Smurf.class
+/Smurf/
